@@ -36,11 +36,13 @@ end
 
 subplot(1,2 ,1)
 hold on
-title("euler dt = " + dt)
+title("y' = -2.3y; Euler dt = " + dt)
 plot(tp, y3, 's-');
 plot(tp, y4, 'x-');
 plot(t, y2, 'LineWidth', 2);
 ylim([-1.5*max(y2), 1.5*max(y2)]);
+xlabel('t');
+ylabel('y(t)');
 legend('explicit euler (forward)', 'implicit euler (backward)', 'exact')
 
 subplot(1,2 ,2)
@@ -48,5 +50,7 @@ hold on
 title('absolute error')
 plot(tp, abs(yexact - y3))
 plot(tp, abs(yexact - y4))
+xlabel('t');
+ylabel('y exact - y euler');
 legend('explicit euler (forward)', 'implicit euler (backward)')
 
